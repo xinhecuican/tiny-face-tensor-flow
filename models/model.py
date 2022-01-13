@@ -3,7 +3,7 @@ import gc
 import numpy as np
 import torch
 from torch import nn
-from torchvision.models import resnet50, resnet101, vgg16
+from torchvision.models import resnet50, resnet101, vgg16, resnet18
 
 
 class DetectionModel(nn.Module):
@@ -11,15 +11,23 @@ class DetectionModel(nn.Module):
     Hybrid Model from Tiny Faces paper
     """
 
-    def __init__(self, base_model=resnet50, num_templates=1, num_objects=1, enable_edge=False):
+    def __init__(self, base_model=resnet50, edge_model=resnet18, num_templates=1, num_objects=1, enable_edge=False):
         super().__init__()
         # 4 is for the bounding box offsets
         output = (num_objects + 4)*num_templates
         self.model = base_model(pretrained=True)
+        self.edge_model = edge_model(pretrained=True)
+        self.enable_edge = enable_edge
         if enable_edge:
-            self.model.conv1.in_channels = 4
-            weight1 = torch.nn.init.kaiming_normal_(torch.nn.Parameter(torch.FloatTensor(64, 4, 7, 7)), a=0, mode='fan_in', nonlinearity='leaky_relu')
-            self.model.conv1.weight = weight1
+            # self.model.conv1.in_channels = 4
+            # weight1 = torch.nn.init.kaiming_normal_(torch.nn.Parameter(torch.FloatTensor(64, 4, 7, 7)), a=0, mode='fan_in', nonlinearity='leaky_relu')
+            # self.model.conv1.weight = weight1
+            del self.edge_model.layer4
+            self.edge_model.conv1.in_channels = 1
+            weights = torch.nn.init.kaiming_normal_(torch.nn.Parameter(torch.FloatTensor(64, 1, 7, 7)), a=0, mode='fan_in', nonlinearity='leaky_relu')
+            self.edge_model.conv1.weight = weights
+            self.score_res5 = nn.Conv2d(in_channels=128, out_channels=output, kernel_size=1, padding=0)
+
         # delete unneeded layer
         del self.model.layer4
         self.score_res3 = nn.Conv2d(in_channels=512, out_channels=output,
@@ -67,24 +75,32 @@ class DetectionModel(nn.Module):
         return parameters
 
     def forward(self, x):
-        x = self.model.conv1(x)
+        if self.enable_edge:
+            x2 = self.edge_model.conv1(x[:, -2: -1, :, :])
+            x2 = self.edge_model.bn1(x2)
+            x2 = self.edge_model.relu(x2)
+            x2 = self.edge_model.maxpool(x2)
+            x2 = self.edge_model.layer1(x2)
+            x2 = self.edge_model.layer2(x2)
+            score_res5 = self.score_res5(x2)
+        x = self.model.conv1(x[:, :-1, :, :]) # 1 64 250 250
         x = self.model.bn1(x)
         x = self.model.relu(x)
-        x = self.model.maxpool(x)
+        x = self.model.maxpool(x) # 1 64 125 125
 
-        x = self.model.layer1(x)
+        x = self.model.layer1(x) # 1 256 125 125
         # res2 = x
 
-        x = self.model.layer2(x)
+        x = self.model.layer2(x) # 1 512 63 63
         res3 = x
 
-        x = self.model.layer3(x)
+        x = self.model.layer3(x) # 1 1024 32 32
         res4 = x
 
-        score_res3 = self.score_res3(res3)
+        score_res3 = self.score_res3(res3) # 1 125 63 63
 
-        score_res4 = self.score_res4(res4)
-        score4 = self.score4_upsample(score_res4)
+        score_res4 = self.score_res4(res4) # 1 125 32 32
+        score4 = self.score4_upsample(score_res4) # 1 125 64 64
 
         # We need to do some fancy cropping to accomodate the difference in image sizes in eval
         if not self.training:
@@ -102,8 +118,10 @@ class DetectionModel(nn.Module):
         else:
             # match the dimensions arbitrarily
             score4 = score4[:, :, 0:score_res3.size(2), 0:score_res3.size(3)]
-
-        score = score_res3 + score4
+        if not self.enable_edge:
+            score = score_res3 + score4
+        else:
+            score = score_res3 + score4 + score_res5
         gc.collect()
         torch.cuda.empty_cache()
         return score

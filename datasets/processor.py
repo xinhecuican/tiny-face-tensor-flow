@@ -7,7 +7,6 @@ from utils.metrics import rect_dist
 from utils.dense_overlap import compute_dense_overlap
 import logging
 
-
 logger = logging.getLogger("detector")
 
 

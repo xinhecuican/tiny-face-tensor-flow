@@ -84,7 +84,7 @@ def train(model, loss_fn, optimizer, dataloader, epoch, device):
         loss = loss_fn(output,
                        class_map_var, regression_map_var)
 
-        # visualize_output(img, output, dataloader.dataset.templates)
+        # visualize_output(img, output, dataloader.dataset.templates, dataloader.dataset.processor)
 
         optimizer.zero_grad()
         # Get the gradients

@@ -11,13 +11,13 @@ import trainer
 from DataLoaderX import DataLoaderX
 from data_prefetcher import data_prefetcher
 from datasets import get_dataloader
+from models.EdgeNet import EdgeNet
 from models.loss import DetectionCriterion
 from models.model import DetectionModel
 from torchvision.models import vgg16
 
 def arguments():
     parser = argparse.ArgumentParser()
-
     parser.add_argument("traindata", default="data/WIDER/wider_face_split/wider_face_train_bbx_gt.txt")
     parser.add_argument("valdata", default="data/WIDER/wider_face_split/wider_face_val_bbx_gt.txt")
     parser.add_argument("--dataset-root", default="data/WIDER")
@@ -25,14 +25,14 @@ def arguments():
     parser.add_argument("--lr", default=1e-4, type=float)
     parser.add_argument("--weight-decay", default=0.0005, type=float)
     parser.add_argument("--momentum", default=0.9, type=float)
-    parser.add_argument("--batch_size", default=6, type=int)
-    parser.add_argument("--workers", default=6, type=int)
+    parser.add_argument("--batch_size", default=1, type=int)
+    parser.add_argument("--workers", default=1, type=int)
     parser.add_argument("--start-epoch", default=0, type=int)
     parser.add_argument("--epochs", default=50, type=int)
     parser.add_argument("--save-every", default=1, type=int)
     parser.add_argument("--resume", default="")
     parser.add_argument("--debug", action="store_true")
-    parser.add_argument("--enable_edge", default=False)
+    parser.add_argument("--enable_edge", default=True)
 
     return parser.parse_args()
 
@@ -52,6 +52,7 @@ def main():
     # prefetcher = data_prefetcher(train_loader)
 
     model = DetectionModel(num_objects=1, num_templates=num_templates, enable_edge=args.enable_edge)
+    edge_net = EdgeNet(num_objects=1, num_templates=num_templates)
     loss_fn = DetectionCriterion(num_templates)
 
     # directory where we'll store model weights
