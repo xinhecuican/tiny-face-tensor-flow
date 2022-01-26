@@ -1,51 +1,36 @@
-# tiny-faces-pytorch
+# 运行环境
 
-This is a PyTorch implementation of Peiyun Hu's [awesome tiny face detector](https://github.com/peiyunh/tiny). 
+joblib==1.0.1
+matplotlib==3.3.4
+numpy==1.20.1
+opencv_python==4.5.4.58
+Pillow==9.0.0
+prefetch_generator==1.0.1
+pyclust==0.2.0
+pyclustering==0.10.1.2
+pympler==1.0.1
+scipy==1.6.2
+torch==1.10.1
+torchvision==0.11.2
+tqdm==4.59.0
 
-We use (and recommend) **Python 3.6+** for minimal pain when using this codebase (plus Python 3.6 has really cool features).
+# 数据集下载
 
-**NOTE** Be sure to cite Peiyun's CVPR paper and this repo if you use this code!
+[train set](https://share.weiyun.com/5WjCBWV)
 
-This code gives the following mAP results on the WIDER Face dataset:
+[val set](https://share.weiyun.com/5ot9Qv1)
 
-| Setting | mAP   |
-|---------|-------|
-| easy    | 0.902 |
-| medium  | 0.892 |
-| hard    | 0.797 |
+[test set](https://share.weiyun.com/5vSUomP)
 
-## Getting Started
+[anotation](http://shuoyang1213.me/WIDERFACE/support/bbx_annotation/wider_face_split.zip)
 
-- Clone this repository.
-- Download the WIDER Face dataset and annotations files to `data/WIDER`.
-- Install dependencies with `pip install -r requirements.txt`.
+然后将下载下来的文件置于data文件夹下
 
-Your data directory should look like this for WIDERFace
+# 运行方法
 
-```
-- data
-    - WIDER
-        - README.md
-        - wider_face_split
-        - WIDER_train
-        - WIDER_val
-        - WIDER_test
-```
+* make: 直接运行
+* make resume: 使用上次训练获得的权重运行，需要修改makefile
+* make evaluate: 获得评估文件
+* make evalutation: 获得评估结果
 
-## Pretrained Weights
-
-You can find the pretrained weights which get the above mAP results [here](https://drive.google.com/open?id=1V8c8xkMrQaCnd3MVChvJ2Ge-DUfXPHNu).
-
-## Training
-
-Just type `make` at the repo root and you should be good to go!
-
-In case you wish to change some settings (such as data location), you can modify the `Makefile` which should be super easy to work with.
-
-## Evaluation
-
-To run evaluation and generate the output files as per the WIDERFace specification, simply run `make evaluate`. The results will be stored in the `val_results` directory.
-
-You can then use the dataset's `eval_tools` to generate the mAP numbers (this needs Matlab/Octave).
-
-Similarly, to run the model on the test set, run `make test` to generate results in the `test_results` directory.
+> 如果受内存限制无法运行可以调节batch_size和workers参数
