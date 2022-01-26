@@ -30,7 +30,7 @@ def arguments():
     parser.add_argument("--batch_size", default=1, type=int)
     parser.add_argument("--results_dir", default=None)
     parser.add_argument("--debug", action="store_true")
-    parser.add_argument("--enable_edge", default=False)
+    parser.add_argument("--enable_edge", default=True)
 
     return parser.parse_args()
 
@@ -99,6 +99,7 @@ def run(args, model, val_loader, templates, prob_thresh, nms_thresh, device, spl
 
 
 def main():
+
     args = arguments()
 
     if torch.cuda.is_available():
