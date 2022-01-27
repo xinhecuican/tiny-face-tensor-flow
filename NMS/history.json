@@ -1,0 +1,461 @@
+[
+    {
+        "weight": "checkpoint12.pth",
+        "method": "nms",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.7735,
+            "medium": 0.7744,
+            "hard": 0.6542
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "nms",
+        "thresh": 0.4,
+        "result": {
+            "easy": 0.7049,
+            "medium": 0.6971,
+            "hard": 0.5701
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "nms",
+        "thresh": 0.05,
+        "result": {
+            "easy": 0.7651,
+            "medium": 0.7673,
+            "hard": 0.6526
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "nms",
+        "thresh": 0.1,
+        "result": {
+            "easy": 0.7682,
+            "medium": 0.7711,
+            "hard": 0.6568
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "nms",
+        "thresh": 0.15,
+        "result": {
+            "easy": 0.77,
+            "medium": 0.773,
+            "hard": 0.6588
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "nms",
+        "thresh": 0.2,
+        "result": {
+            "easy": 0.7713,
+            "medium": 0.7739,
+            "hard": 0.6601
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "nms",
+        "thresh": 0.25,
+        "result": {
+            "easy": 0.7755,
+            "medium": 0.7777,
+            "hard": 0.6617
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "nms",
+        "thresh": 0.35,
+        "result": {
+            "easy": 0.751,
+            "medium": 0.7488,
+            "hard": 0.6249
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "nms",
+        "thresh": 0.45,
+        "result": {
+            "easy": 0.6353,
+            "medium": 0.6211,
+            "hard": 0.4954
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms0.0005",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.0055,
+            "medium": 0.0095,
+            "hard": 0.0204
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms0.001",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.006,
+            "medium": 0.0104,
+            "hard": 0.0221
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms0.0015",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.0064,
+            "medium": 0.0111,
+            "hard": 0.0231
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms0.0020",
+        "result": {
+            "easy": 0.0066,
+            "medium": 0.0115,
+            "hard": 0.0237
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms0.0025",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.0068,
+            "medium": 0.0119,
+            "hard": 0.0242
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms0.003",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.007,
+            "medium": 0.0123,
+            "hard": 0.0247
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms0.005",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.0077,
+            "medium": 0.0136,
+            "hard": 0.0269
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms0.01",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.0085,
+            "medium": 0.0151,
+            "hard": 0.0309
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms0.03",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.0099,
+            "medium": 0.0175,
+            "hard": 0.0323
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms0.08",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.0109,
+            "medium": 0.0176,
+            "hard": 0.0244
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms0.1",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.0102,
+            "medium": 0.0159,
+            "hard": 0.0205
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms0.2",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.0055,
+            "medium": 0.0079,
+            "hard": 0.0081
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms10.1",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6303,
+            "medium": 0.5916,
+            "hard": 0.4581
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms10.2",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6795,
+            "medium": 0.6642,
+            "hard": 0.5154
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms10.25",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6877,
+            "medium": 0.6809,
+            "hard": 0.5196
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms10.3",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6826,
+            "medium": 0.6785,
+            "hard": 0.5042
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms10.35",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6745,
+            "medium": 0.6686,
+            "hard": 0.483
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms10.4",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6611,
+            "medium": 0.6517,
+            "hard": 0.4567
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.4 0.1",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6621,
+            "medium": 0.6352,
+            "hard": 0.506
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.4 0.2",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6979,
+            "medium": 0.7006,
+            "hard": 0.5477
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.4 0.25",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6927,
+            "medium": 0.6949,
+            "hard": 0.5312
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.4 0.3",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6841,
+            "medium": 0.6833,
+            "hard": 0.5074
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.4 0.35",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6746,
+            "medium": 0.6694,
+            "hard": 0.4834
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.4 0.4",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6611,
+            "medium": 0.6517,
+            "hard": 0.4567
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.2 0.01",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6121,
+            "medium": 0.5718,
+            "hard": 0.4436
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.2 0.05",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6646,
+            "medium": 0.6393,
+            "hard": 0.5184
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.2 0.1",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.7077,
+            "medium": 0.7161,
+            "hard": 0.5817
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.2 0.15",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.7052,
+            "medium": 0.7143,
+            "hard": 0.5691
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.2 0.2",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6994,
+            "medium": 0.7055,
+            "hard": 0.5511
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.2 sort0.1",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.5274,
+            "medium": 0.4626,
+            "hard": 0.2965
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.2 sort0.15",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.5241,
+            "medium": 0.4595,
+            "hard": 0.291
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.2 sort0.2",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.5213,
+            "medium": 0.4555,
+            "hard": 0.2848
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.2 sort0.3",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.5129,
+            "medium": 0.4448,
+            "hard": 0.271
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.2 gauss0.1",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.7031,
+            "medium": 0.7052,
+            "hard": 0.572
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.2 gauss0.05",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6701,
+            "medium": 0.6494,
+            "hard": 0.5297
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.2 gauss0.2",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6994,
+            "medium": 0.7055,
+            "hard": 0.5511
+        }
+    },
+    {
+        "weight": "checkpoint12.pth",
+        "method": "softnms1 0.2 gauss0.3",
+        "thresh": 0.3,
+        "result": {
+            "easy": 0.6841,
+            "medium": 0.6833,
+            "hard": 0.5074
+        }
+    }
+]
