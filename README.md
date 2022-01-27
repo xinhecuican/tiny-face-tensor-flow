@@ -51,3 +51,4 @@ tqdm==4.59.0
 
 * master:  添加边缘提取
 * new_dataset: 使用新的数据集
+* master/nms : nms部分
