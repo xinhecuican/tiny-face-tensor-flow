@@ -1,17 +1,29 @@
 # 运行环境
 
 joblib==1.0.1
+
 matplotlib==3.3.4
+
 numpy==1.20.1
+
 opencv_python==4.5.4.58
+
 Pillow==9.0.0
+
 prefetch_generator==1.0.1
+
 pyclust==0.2.0
+
 pyclustering==0.10.1.2
+
 pympler==1.0.1
+
 scipy==1.6.2
+
 torch==1.10.1
+
 torchvision==0.11.2
+
 tqdm==4.59.0
 
 # 数据集下载
@@ -35,3 +47,7 @@ tqdm==4.59.0
 
 > 如果受内存限制无法运行可以调节batch_size和workers参数
 
+# 关于分支
+
+* master:  添加边缘提取
+* new_dataset: 使用新的数据集
