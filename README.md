@@ -45,9 +45,12 @@ tqdm==4.59.0
 * make evaluate: 获得评估文件
 * make evalutation: 获得评估结果
 
+预训练权重选择： 调节CHECKPOINT，权重位于weights文件夹中
+
 > 如果受内存限制无法运行可以调节batch_size和workers参数
 
 # 关于分支
 
-* master:  添加边缘提取
+* master:  添加边缘提取， nms文件夹中是非极大值抑制内容
 * new_dataset: 使用新的数据集
+
