@@ -51,6 +51,7 @@ tqdm==4.59.0
 
 # 关于分支
 
-* master:  添加边缘提取， nms文件夹中是非极大值抑制内容
+* master: 添加边缘提取
 * new_dataset: 使用新的数据集
+* master/nms : nms部分
 
