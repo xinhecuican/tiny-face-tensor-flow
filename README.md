@@ -16,15 +16,7 @@ tqdm==4.59.0
 
 # 数据集下载
 
-[train set](https://share.weiyun.com/5WjCBWV)
-
-[val set](https://share.weiyun.com/5ot9Qv1)
-
-[test set](https://share.weiyun.com/5vSUomP)
-
-[anotation](http://shuoyang1213.me/WIDERFACE/support/bbx_annotation/wider_face_split.zip)
-
-然后将下载下来的文件置于data文件夹下
+rsod数据集，运行程序自动下载
 
 # 运行方法
 
